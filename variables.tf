@@ -16,7 +16,8 @@ variable "handler_name" {
 
 variable "memory_size" {
   description = "Amount of memory in MB your Lambda Function can use at runtime."
-  default     = "128"
+  default     = 128
+  type        = number
 }
 
 variable "runtime" {
@@ -26,7 +27,8 @@ variable "runtime" {
 
 variable "timeout" {
   description = "The amount of time your Lambda Function has to run in seconds. Defaults to 5 minutes"
-  default     = "300"
+  default     = 300
+  type        = number
 }
 
 variable "source_code_path" {
@@ -38,8 +40,13 @@ variable "output_path" {
   default     = "lambda.zip"
 }
 
+variable "staging_directory" {
+  description = "Path to an empty directory used for staging the lambda files. The content is left in the directory after staging"
+  default     = "lambda.zip"
+}
+
 variable "environment" {
   description = "Environment configuration for the Lambda function"
-  type        = "map"
+  type        = map
   default     = {}
 }
