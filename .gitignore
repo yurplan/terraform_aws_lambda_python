@@ -7,3 +7,5 @@
 
 # .tfvars files
 *.tfvars
+
+dir_hash_zip
