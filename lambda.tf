@@ -8,7 +8,7 @@ resource "null_resource" "install_python_dependencies" {
   triggers = {
     requirements = sha1(file("${var.source_code_path}/requirements.txt"))
     dir_hash     = data.archive_file.dir_hash_zip.output_base64sha256
-    output_path = var.output_path
+    output_path  = var.output_path
   }
 
   provisioner "local-exec" {
