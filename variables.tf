@@ -47,6 +47,6 @@ variable "staging_directory" {
 
 variable "environment" {
   description = "Environment configuration for the Lambda function"
-  type        = map
+  type        = map(any)
   default     = {}
 }
